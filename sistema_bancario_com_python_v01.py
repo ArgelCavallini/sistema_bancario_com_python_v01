@@ -2,7 +2,7 @@ class ContaBancaria:
     def __init__(self):
         self.saldo         = 0
         self.extrato       = []
-        self.limite_diario = 500
+        self.LIMITE_DIARIO = 500
         self.saque_diario  = 0
         self.LIMITE_SAQUES = 3
 
@@ -18,7 +18,7 @@ class ContaBancaria:
     def sacarDinheiro(self, valor):
         if self.saque_diario >= self.LIMITE_SAQUES:
             print("Você atingiu o limite diário de saques (3 saques).")
-        elif valor > 0 and valor <= self.limite_diario:
+        elif valor > 0 and valor <= self.LIMITE_DIARIO:
             if self.saldo >= valor:
                 self.saldo -= valor
                 self.extrato.append(f"Saque: -{valor}")
